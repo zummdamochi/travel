@@ -7,7 +7,7 @@
     'img/IMG_0591.jpeg',
     'img/IMG_0564.jpeg',
     'img/IMG_0905.jpeg',
-    'img/IMG_0567.jpeg'
+    'img/IMG_0567.jpeg',
   ];
   let currentIndex = 0;
 
@@ -19,7 +19,7 @@
     img.src = image;
 
     const li = document.createElement('li');
-    if (index === currentIndex){
+    if (index === currentIndex) {
       li.classList.add('current');
     }
     li.addEventListener('click', () =>{
@@ -33,27 +33,27 @@
     li.appendChild(img);
     document.querySelector('.thumbnails').appendChild(li);
   });
-  
-  function playSlideshow(){
-    setTimeout(() =>{
-      let target = currentIndex + 1;
-      if (target === images.length) {
-        target = 0;
-      }
-      const thumbnails = document.querySelectorAll('.thumbnails > li')[target].click();
-      playSlideshow();
-    }, 3000);
+
+  mainImage.addEventListener('click' , () => {
+    let target = currentIndex + 1;
+    if (target === images.length) {
+      target = 0;
   }
-
-  let isPlaying = false;
-
-  mainImage.addEventListener('click' ,() =>{
-    if (isPlaying === false) {
-      playSlideshow();
-    }
+    document.querySelectorAll('.thumbnails > li')[target].click();
   });
+}
+
+function playSlideshow() {
+  setTimeout(() => {
+    main.click();
+    playSlideshow();
+  }, 3000);
+}
+
+playSlideshow();
 
 
+{
   const spopen = document.getElementById('spopen');
   const overlay = document.querySelector('.overlay');
   const sp = document.querySelector('.sp');
