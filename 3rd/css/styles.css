@@ -4,6 +4,7 @@ body {
   color: #333;
   background: linear-gradient(-135deg, rgb(255, 249, 192), rgb(150, 224, 255));
   width: 100%;
+  user-select: none;
 }
 
 main {
